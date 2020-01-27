@@ -13,6 +13,7 @@ import uuid
 import time
 from pymongo import MongoClient
 import uuid
+from datetime import datetime
 
 env_path = Path('../') / '.env'
 load_dotenv(dotenv_path=env_path)
@@ -77,6 +78,7 @@ def scrape_book(url, base_url):
                        data_dict['description'] = ''
                     else:
                          data_dict['description'] = description.find('p', class_ = None).text
+                data_dict['created_at'] = str(datetime.now().time())
                     
             # Insert the data in database.
             table.insert(data_dict)

@@ -11,6 +11,11 @@ class Book(models.Model):
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
 
+    def save(self, *args, **kwargs):
+        """Saves all the changes of the Book model"""
+        super().save(*args, **kwargs)
+
+
     def __str__(self):
         self.uuid
 
