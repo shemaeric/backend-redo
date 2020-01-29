@@ -1,0 +1,14 @@
+<form method="GET">
+    <input id="q" name="q" type="text" placeholder="your search...."/>
+</form>
+
+<div>
+    {% for item in books %}
+
+        {{ item.id }}
+        {{ item.title }}
+        {{ item.description }}
+
+        <br>
+    {% endfor %}
+</div>

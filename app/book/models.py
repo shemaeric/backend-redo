@@ -4,6 +4,7 @@ from djongo import models
 
 class Book(models.Model):
 
+    id = models.CharField(max_length = 40,primary_key=True, editable=False)
     uuid = models.CharField(max_length = 40, null = False)
     title = models.CharField(max_length = 40, null = False)
     main_image = models.CharField(max_length = 40, null = False)
@@ -18,6 +19,7 @@ class Book(models.Model):
 
     def __str__(self):
         self.uuid
+        
 
 
 
